@@ -1,9 +1,11 @@
 import React from 'react';
+import Navbar from './Pages/Navbar/Navbar';
 
 const App = () => {
   return (
     <div>
-        <p className='text-6xl text-center'>task management app</p>
+      <p>App</p>
+      <Navbar></Navbar>
     </div>
   );
 };
