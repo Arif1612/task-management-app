@@ -19,11 +19,7 @@ const Profile = () => {
       </div>
     </div>
 
-    // <div className="user-profile">
-    //   <img src={user.photoURL} alt={`${user.displayName}'s Profile`} />
-    //   <h2>{user.displayName}</h2>
-    //   <p>{user.bio}</p> {/* Display user's bio */}
-    // </div>
+    
   );
 };
 

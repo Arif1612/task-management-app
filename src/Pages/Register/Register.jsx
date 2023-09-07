@@ -139,13 +139,7 @@ const Register = () => {
                   <span className="label-text">Bio</span>
                 </label>
                 <textarea className="textarea textarea-bordered" placeholder="Bio"  name="bio" required></textarea>
-                {/* <input
-                  name="email"
-                  type="text"
-                  placeholder="email"
-                  className="input input-bordered"
-                  required
-                /> */}
+              
               </div>
                 {/* eroor message */}
                 {errorMessage && (
