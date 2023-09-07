@@ -27,6 +27,7 @@ const Register = () => {
     const password = form.password.value;
     const bio = form.bio.value;
 
+
     // image upload
     const image= form.image.files[0];
     const formData = new FormData();
