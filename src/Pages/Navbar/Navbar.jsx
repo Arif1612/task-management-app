@@ -44,6 +44,9 @@ const Navbar = () => {
             <Link className=" mr-5  " to="/">
               Home
             </Link>
+            <Link className=" mr-5  " to="/user-profile">
+              User Profile
+            </Link>
          
           </ul>
 
@@ -71,6 +74,9 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex ">
         <Link className=" mr-3 hover:bg-white hover:text-black p-3 hover:text-xl rounded " to="/">
           Home
+        </Link>
+        <Link className=" mr-3 hover:bg-white hover:text-black p-3 hover:text-xl rounded " to="/profile">
+          Profile
         </Link>
      
       </div>
