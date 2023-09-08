@@ -9,7 +9,6 @@ import Home from "./Pages/Home/Home/Home";
 import AuthProvider from "./providers/AuthProvider";
 import Profile from "./Pages/Home/Profile/Profile";
 import Main from "./Pages/Layout/Main";
-import AddATask from "./Pages/Task/AddATask/AddATask";
 import TaskDashboard from "./Pages/Layout/TaskDashboard";
 import TaskList from "./Pages/Task/TaskList/TaskList";
 import Task from "./Pages/Task/Task/Task";
@@ -53,10 +52,7 @@ const router = createBrowserRouter([
         path: "",
         element: <Task></Task>,
       },
-      // {
-      //   path:'add-a-task',
-      //   element: <AddATask></AddATask> ,
-      // },
+    
       {
         path: "task-list",
         element: <TaskList></TaskList>,
