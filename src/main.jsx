@@ -1,9 +1,6 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import ErrorPage from "./Pages/ErrorPage/ErrorPage";
 import Login from "./Pages/Login/Login";
@@ -16,6 +13,9 @@ import AddATask from "./Pages/Task/AddATask/AddATask";
 import TaskDashboard from "./Pages/Layout/TaskDashboard";
 import TaskList from "./Pages/Task/TaskList/TaskList";
 import Task from "./Pages/Task/Task/Task";
+import TeamDashboard from "./Pages/Layout/TeamDashboard";
+import Team from "./Pages/Team/Team/Team";
+import TeamCreationForm from "./Pages/Team/TeamCreationForm/TeamCreationForm";
 
 const router = createBrowserRouter([
   {
@@ -24,7 +24,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
-        path:'/',
+        path: "/",
         element: <Home></Home>,
       },
       {
@@ -37,17 +37,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/profile",
-        element:<Profile></Profile>,
+        element: <Profile></Profile>,
       },
     ],
   },
-  {
-    path: "/task",  
+
+   // task
+   {
+    path: "/task",
     element: <TaskDashboard></TaskDashboard>,
     errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
-        path:'',
+        path: "",
         element: <Task></Task>,
       },
       // {
@@ -55,18 +57,40 @@ const router = createBrowserRouter([
       //   element: <AddATask></AddATask> ,
       // },
       {
-        path:'task-list',
-        element: <TaskList></TaskList>  ,
+        path: "task-list",
+        element: <TaskList></TaskList>,
       },
-    
     ],
   },
+
+  // team
+  {
+    path: "/team",
+    element: <TeamDashboard></TeamDashboard>,
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
+      {
+        path: "",
+        element: <Team></Team> ,
+      },
+       {
+        path:'team-creation-form',
+        element: <TeamCreationForm></TeamCreationForm> ,
+      },
+      {
+        path: "task-list",
+        element: <TaskList></TaskList>,
+      },
+    ],
+  },
+
+ 
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthProvider>
-    <RouterProvider router={router} />
+      <RouterProvider router={router} />
     </AuthProvider>
   </React.StrictMode>
 );

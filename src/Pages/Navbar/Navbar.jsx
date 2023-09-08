@@ -50,6 +50,9 @@ const Navbar = () => {
             <Link className=" mr-5  " to="/task">
               Task
             </Link>
+            <Link className=" mr-5  " to="/team">
+              Team
+            </Link>
          
           </ul>
 
@@ -83,6 +86,9 @@ const Navbar = () => {
         </Link>
         <Link className=" mr-3 hover:bg-white hover:text-black p-3 hover:text-xl rounded " to="/task">
           Task
+        </Link>
+        <Link className=" mr-3 hover:bg-white hover:text-black p-3 hover:text-xl rounded " to="/team">
+          Team
         </Link>
      
       </div>
