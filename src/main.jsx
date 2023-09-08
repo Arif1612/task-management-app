@@ -12,6 +12,8 @@ import Register from "./Pages/Register/Register";
 import Home from "./Pages/Home/Home/Home";
 import AuthProvider from "./providers/AuthProvider";
 import Profile from "./Pages/Home/Profile/Profile";
+import Task from "./Pages/Task/Task/Task";
+import TaskForm from "./Pages/Task/TaskForm/TaskForm";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +37,18 @@ const router = createBrowserRouter([
         path: "/profile",
         element:<Profile></Profile>,
       },
+    ],
+  },
+  {
+    path: "/task",
+    element: <Task></Task>,
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
+      {
+        path:'task-form',
+        element: <TaskForm></TaskForm>,
+      },
+    
     ],
   },
 ]);

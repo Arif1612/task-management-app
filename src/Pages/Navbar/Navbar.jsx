@@ -5,7 +5,7 @@ import { AuthContext } from "../../providers/AuthProvider";
 
 const Navbar = () => {
   const { logOut, user } = useContext(AuthContext);
-  console.log(user);
+  // console.log(user);
   // console.log(user.displayName);
 
   // Logout
@@ -47,6 +47,9 @@ const Navbar = () => {
             <Link className=" mr-5  " to="/user-profile">
               User Profile
             </Link>
+            <Link className=" mr-5  " to="/task">
+              Task
+            </Link>
          
           </ul>
 
@@ -77,6 +80,9 @@ const Navbar = () => {
         </Link>
         <Link className=" mr-3 hover:bg-white hover:text-black p-3 hover:text-xl rounded " to="/profile">
           Profile
+        </Link>
+        <Link className=" mr-3 hover:bg-white hover:text-black p-3 hover:text-xl rounded " to="/task">
+          Task
         </Link>
      
       </div>
