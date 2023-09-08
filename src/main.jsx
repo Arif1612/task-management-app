@@ -16,6 +16,7 @@ import Task from "./Pages/Task/Task/Task";
 import TeamDashboard from "./Pages/Layout/TeamDashboard";
 import Team from "./Pages/Team/Team/Team";
 import TeamCreationForm from "./Pages/Team/TeamCreationForm/TeamCreationForm";
+import PrivateRoute from "./Pages/PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -25,7 +26,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home></Home>,
+        element: <PrivateRoute><Home></Home></PrivateRoute>,
       },
       {
         path: "/login",
@@ -37,7 +38,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/profile",
-        element: <Profile></Profile>,
+        element: <PrivateRoute><Profile></Profile></PrivateRoute>,
       },
     ],
   },
@@ -45,7 +46,7 @@ const router = createBrowserRouter([
    // task
    {
     path: "/task",
-    element: <TaskDashboard></TaskDashboard>,
+    element: <PrivateRoute><TaskDashboard></TaskDashboard></PrivateRoute>,
     errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
@@ -66,7 +67,7 @@ const router = createBrowserRouter([
   // team
   {
     path: "/team",
-    element: <TeamDashboard></TeamDashboard>,
+    element: <PrivateRoute><TeamDashboard></TeamDashboard></PrivateRoute>,
     errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
