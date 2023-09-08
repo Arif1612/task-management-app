@@ -6,7 +6,7 @@ import { AuthContext } from "../../../providers/AuthProvider";
 const Profile = () => {
   const { user } = useContext(AuthContext);
   return (
-    <div className="flex justify-center items-center mt-16">
+    <div className="flex justify-center items-center mt-24 ">
       <div className="card w-96 bg-base-100 shadow-xl ">
         <figure>
           <img src={user?.photoURL} alt={`${user?.displayName}'s Profile`} />

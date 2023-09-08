@@ -5,20 +5,21 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import "./index.css";
-import App from "./App";
 import ErrorPage from "./Pages/ErrorPage/ErrorPage";
 import Login from "./Pages/Login/Login";
 import Register from "./Pages/Register/Register";
 import Home from "./Pages/Home/Home/Home";
 import AuthProvider from "./providers/AuthProvider";
 import Profile from "./Pages/Home/Profile/Profile";
-import Task from "./Pages/Task/Task/Task";
-import TaskForm from "./Pages/Task/TaskForm/TaskForm";
+import Main from "./Pages/Layout/Main";
+import AddATask from "./Pages/Task/AddATask/AddATask";
+import TaskDashboard from "./Pages/Layout/TaskDashboard";
+import TaskList from "./Pages/Task/TaskList/TaskList";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App></App>,
+    element: <Main></Main>,
     errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
@@ -40,13 +41,17 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "/task",
-    element: <Task></Task>,
+    path: "/task",  
+    element: <TaskDashboard></TaskDashboard>,
     errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
-        path:'task-form',
-        element: <TaskForm></TaskForm>,
+        path:'add-a-task',
+        element: <AddATask></AddATask> ,
+      },
+      {
+        path:'task-list',
+        element: <TaskList></TaskList>  ,
       },
     
     ],

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const TaskForm = ({ addTask }) => {
+const AddATask = ({ addTask }) => {
   const [task, setTask] = useState({
     title: '',
     description: '',
@@ -122,4 +122,4 @@ const TaskForm = ({ addTask }) => {
   );
 };
 
-export default TaskForm;
+export default AddATask;

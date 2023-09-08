@@ -1,12 +1,9 @@
 import React from 'react';
-import Navbar from '../../Navbar/Navbar';
-import { Outlet } from 'react-router-dom';
 
 const Task = () => {
     return (
         <div>
-             <Navbar></Navbar>
-            <Outlet></Outlet>
+            <p>Normal Task</p>
         </div>
     );
 };
