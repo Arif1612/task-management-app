@@ -50,10 +50,10 @@ const router = createBrowserRouter([
         path:'',
         element: <Task></Task>,
       },
-      {
-        path:'add-a-task',
-        element: <AddATask></AddATask> ,
-      },
+      // {
+      //   path:'add-a-task',
+      //   element: <AddATask></AddATask> ,
+      // },
       {
         path:'task-list',
         element: <TaskList></TaskList>  ,

@@ -58,14 +58,14 @@ const TaskDashboard = () => {
        
               <>
            
-                <li>
+                {/* <li>
                   <Link
                     to="/task/add-a-task"
                     className="hover:bg-gray-500 hover:text-white rounded  text-base"
                   >
                     <AiFillFileAdd></AiFillFileAdd> Add A Task
                   </Link>
-                </li>
+                </li> */}
 
                 <li>
                   <Link

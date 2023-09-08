@@ -1,16 +1,29 @@
-import React, { useEffect, useState } from 'react';
-import { getTasksFromLocalStorage } from '../localStorage';
+import React, { useEffect, useState } from "react";
+import { getTasksFromLocalStorage } from "../localStorage";
 
-const TaskList = ({ assignTask, updateTaskStatus }) => {
+const TaskList = ({}) => {
   const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
-    // Retrieve tasks from local storage when the TaskList loads
+    // Retrieve tasks from local storage when the Task loads
     const storedTasks = getTasksFromLocalStorage();
-    // Sort tasks by due date in descending order
-    storedTasks.sort((a, b) => new Date(b.dueDate) - new Date(a.dueDate));
     setTasks(storedTasks);
   }, []);
+
+  
+  // Define the updateTaskStatus function to update the status of a task
+  const updateTaskStatus = (taskId, newStatus) => {
+    // Find the task with the given taskId and update its status
+    const updatedTasks = tasks.map((task) =>
+      task.id === taskId ? { ...task, status: newStatus } : task
+    );
+
+    // Update the state with the new tasks list
+    setTasks(updatedTasks);
+
+    // Update the local storage with the new tasks list
+    localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+  };
 
   return (
     <div className="max-w-md mx-auto">
@@ -25,15 +38,15 @@ const TaskList = ({ assignTask, updateTaskStatus }) => {
               <p>Assignee: {task.assignee}</p>
               <p>Status: {task.status}</p>
               <div className="mt-2 space-x-2">
-                <button
+                {/* <button
                   className="btn btn-primary"
-                  onClick={() => assignTask(task.id, 'Username')}
+                  onClick={() => assignTask(task.id, "Username")}
                 >
                   Assign
-                </button>
+                </button> */}
                 <button
                   className="btn btn-success"
-                  onClick={() => updateTaskStatus(task.id, 'Completed')}
+                  onClick={() => updateTaskStatus(task.id, "Completed")}
                 >
                   Mark as Completed
                 </button>
