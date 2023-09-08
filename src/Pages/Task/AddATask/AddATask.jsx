@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { addTaskToLocalStorage } from  '../localStorage';
+import Swal from 'sweetalert2';
 
 const AddATask = ({ addTask }) => {
   const [task, setTask] = useState({
@@ -6,8 +8,8 @@ const AddATask = ({ addTask }) => {
     description: '',
     dueDate: '',
     priority: 'Low',
-    assignee: '', // Add this field for assignment
-    status: 'In Progress', // Add this field for status
+    assignee: '', 
+    status: 'In Progress',
   });
 
   const handleChange = (e) => {
@@ -17,7 +19,8 @@ const AddATask = ({ addTask }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addTask(task);
+    addTask(task); // Call the parent component's addTask function
+    addTaskToLocalStorage(task); // Save the task to local storage
     setTask({
       title: '',
       description: '',
@@ -26,10 +29,19 @@ const AddATask = ({ addTask }) => {
       assignee: '',
       status: 'In Progress',
     });
+    Swal.fire({
+      position: 'top',
+      icon: 'success',
+      title: 'Task Added Successfully',
+      showConfirmButton: false,
+      timer: 1500
+    })
   };
 
+
+
   return (
-    <div className=" card-body max-w-md mx-auto shadow-2xl">
+    <div className=" card-body max-w-md mx-auto shadow-2xl ">
       <form onSubmit={handleSubmit}>
         <div className="space-y-4">
         {/* title */}
@@ -42,7 +54,7 @@ const AddATask = ({ addTask }) => {
             value={task.title}
             onChange={handleChange}
             placeholder="Task Title"
-            className="input"
+            className="input w-full"
             required
           />
           {/* description */}
@@ -54,7 +66,7 @@ const AddATask = ({ addTask }) => {
             value={task.description}
             onChange={handleChange}
             placeholder="Task Description"
-            className="textarea"
+            className="textarea w-full"
             required
           ></textarea>
           <br />
@@ -67,19 +79,19 @@ const AddATask = ({ addTask }) => {
             name="dueDate"
             value={task.dueDate}
             onChange={handleChange}
-            className="input"
+            className="input w-full"
             required
           />
           <br />
           {/* Priority level */}
           <label className="label font-bold">
-                  <span className="label-text">Priority Level</span>
+                  <span className="label-text w-full">Priority Level</span>
                 </label>
           <select
             name="priority"
             value={task.priority}
             onChange={handleChange}
-            className="select"
+            className="select w-full"
           >
             <option value="Low">Low Priority</option>
             <option value="Medium">Medium Priority</option>
@@ -88,7 +100,7 @@ const AddATask = ({ addTask }) => {
           <br />
           {/* assign tasks */}
           <label className="label font-bold">
-                  <span className="label-text">Assigned Tasks</span>
+                  <span className="label-text w-full">Assigned Tasks</span>
          </label>
           <input
             type="text"
@@ -96,18 +108,18 @@ const AddATask = ({ addTask }) => {
             value={task.assignee}
             onChange={handleChange}
             placeholder="Assignee (Username)"
-            className="input"
+            className="input w-full"
           />
           <br />
           {/* status */}
           <label className="label font-bold">
-                  <span className="label-text">Status</span>
+                  <span className="label-text ">Status</span>
                 </label>
           <select
             name="status"
             value={task.status}
             onChange={handleChange}
-            className="select"
+            className="select w-full "
           >
             <option value="In Progress">In Progress</option>
             <option value="Completed">Completed</option>

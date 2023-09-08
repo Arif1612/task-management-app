@@ -36,7 +36,7 @@ const TaskDashboard = () => {
             <li>
               <Link
                 className="flex justify-center items-center text-2xl font-bold p-3  rounded hover:bg-gray-500 hover:text-white"
-                to="/"
+                to="/task"
               >
                 <img
                   className=" rounded-full"

@@ -15,6 +15,7 @@ import Main from "./Pages/Layout/Main";
 import AddATask from "./Pages/Task/AddATask/AddATask";
 import TaskDashboard from "./Pages/Layout/TaskDashboard";
 import TaskList from "./Pages/Task/TaskList/TaskList";
+import Task from "./Pages/Task/Task/Task";
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
     element: <TaskDashboard></TaskDashboard>,
     errorElement: <ErrorPage></ErrorPage>,
     children: [
+      {
+        path:'',
+        element: <Task></Task>,
+      },
       {
         path:'add-a-task',
         element: <AddATask></AddATask> ,
